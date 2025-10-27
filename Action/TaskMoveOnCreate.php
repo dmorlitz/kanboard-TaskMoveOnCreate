@@ -21,7 +21,7 @@ class TaskMoveOnCreate extends Base
      */
     public function getDescription()
     {
-        return t('Move the task to another column when created');
+        return t('Move the task to another column when created and is a specific color');
     }
 
     /**
@@ -47,6 +47,7 @@ class TaskMoveOnCreate extends Base
     {
         return array(
             'column_id' => t('Column'),
+            'color_id' => t('Color')
         );
     }
 
@@ -63,6 +64,7 @@ class TaskMoveOnCreate extends Base
             'task' => array(
                 'column_id',
                 'project_id',
+                'color_id',
             ),
         );
     }
@@ -93,7 +95,8 @@ class TaskMoveOnCreate extends Base
      */
     public function hasRequiredCondition(array $data)
     {
-        return true;
+        return ($data['task']['color_id'] == $this->getParam('color_id'));
+        //return true;
     }
 }
 
