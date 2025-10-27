@@ -21,7 +21,7 @@ class TaskMoveOnCreate extends Base
      */
     public function getDescription()
     {
-        return t('Automatically move task to a column when created');
+        return t('Move the task to a another column when created');
     }
 
     /**
