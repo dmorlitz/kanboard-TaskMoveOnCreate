@@ -15,7 +15,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Move the task to a another column when created');
+        return t('Move the task to another column when created');
     }
 
     public function getPluginAuthor()
